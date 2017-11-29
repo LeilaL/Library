@@ -17,7 +17,7 @@ include('template/header.php');
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="year" name="date" type="number" class="validate">
+        <input id="year" name="year" type="number" class="validate">
         <label for="year">Année</label>
       </div>
 

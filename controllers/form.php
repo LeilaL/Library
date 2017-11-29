@@ -1,5 +1,5 @@
 <?php
-// require ("../model/BookManager.php");
+require ("../model/BookManager.php");
 
 // controller of formView
 

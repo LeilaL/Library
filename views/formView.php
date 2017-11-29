@@ -22,8 +22,8 @@ include('template/header.php');
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="text2" name="name" type="text" class="validate">
-        <label for="text2">Author</label>
+        <input id="text2" name="author" type="text" class="validate">
+        <label for="text2">Auteur</label>
       </div>
 
       <div class="input-field col s12 m10 l7">

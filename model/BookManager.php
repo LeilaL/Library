@@ -52,3 +52,4 @@ class BookManager
       $req->bindValue('amount', $bk->getAmount(), PDO::PARAM_INT);
       $req->execute();
     }
+}

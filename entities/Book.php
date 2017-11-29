@@ -4,7 +4,7 @@ class Book
 {
   protected $id;
   protected $title;
-  protected $date
+  protected $date;
   protected $author;
   protected $resume;
 
@@ -17,6 +17,7 @@ class Book
 
 
   // SETTERS
+
   /**
   * Set the value of Id
   *
@@ -135,7 +136,7 @@ class Book
 
   // METHODS
 
-  
+
   public function hydrate($data)
   {
     foreach ($data as $key => $value) {

@@ -21,7 +21,7 @@
 
     <nav id="header">
       <div class="nav-wrapper center-align">
-        <a href="../controllers/index.php" class="brand-logo">Bank_Able</a>
+        <a href="../controllers/index.php" class="brand-logo">Library</a>
       </div>
     </nav>
 

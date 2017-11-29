@@ -1,0 +1,19 @@
+#footer, #header {
+  background-color: #ff5722;
+}
+
+#button {
+  margin: 15px 0 0 15px;
+}
+
+strong {
+  color: white;
+}
+
+#return{
+  margin-left: 20px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #ff6e40;
+}

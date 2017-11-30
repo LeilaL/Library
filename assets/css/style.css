@@ -17,3 +17,7 @@ strong {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
   color: #ff6e40;
 }
+
+#link a {
+  color: white;
+}

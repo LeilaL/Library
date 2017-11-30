@@ -7,14 +7,17 @@ include("template/header.php");
 <a href="index.php" id="return"><strong>Retour</strong></a>
 <div class="row">
   <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Ajouter un livre</a>
-  <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Voir les utilisateurs</a>
+  <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Voir les utilisateurs</a><br>
+  <br>
   <div class="col s12 m7 offset-m3 l6 offset-l3">
-    <div class="card teal darken-4">
+    <div class="card deep-orange">
       <div class="card-content white-text">
-        <!-- <span class="card-title"><strong>titre<?php echo $client->getId()?></strong></span> -->
-        <!-- <span class="card-title">auteur<em><?php echo $client->getName();?></em></span> -->
-        <!-- <span class="card-title">année<?php echo $infosAccount->getName()?></span> -->
-<!-- <p>résumé</p> -->
+        <span class="card-title"><strong><?php echo $book->getTitle()?></strong></span>
+        <span class="card-title"><em><?php echo $book->getAuthor();?></em></span>
+        <span class="card-title"><?php echo $book->getYear()?></span>
+        <p><?php echo $book->getCategory()?></p>
+        <br>
+<p><?php echo $book->getResume()?></p>
       </div>
     </div>
   </div>

@@ -6,7 +6,7 @@ require("../entities/Book.php");
 $bookManager = new BookManager();
 
 
-// INSERT INFOS IN BDD
+// INSERT INPUT VALUES IN BDD
 if (!empty($_POST['add']) && isset($_POST['add'])) {
   if (!empty($_POST)) {
   $book = new Book(
@@ -17,14 +17,16 @@ if (!empty($_POST['add']) && isset($_POST['add'])) {
     'resume' => htmlspecialchars($_POST['resume'])]
   );
   $bookManager->addBook($book);
+  // TO AVOID FORM RESUBMISSION WHEN PAGE IS REFRESHED
+  header('Location:index.php');
 }
   }
 
 // FOREACH FOR SHOW INFOS
 $books= $bookManager->getAllBooks();
-// foreach ($books as $key => $value) {
-//   $books[$key] = new Book($value);
-// }
+foreach ($books as $key => $value) {
+  $books[$key] = new Book($value);
+}
 
 
 include '../views/indexView.php';

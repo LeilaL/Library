@@ -21,6 +21,8 @@ include('template/header.php');
         <label for="text2">Auteur</label>
       </div>
 
+      <!-- <input type="hidden" name="state" value="available"> -->
+
       <div class="input-field col s12 m10 l7">
         <input id="year" name="year" type="number" class="validate">
         <label for="year">Année de parution</label>
@@ -30,7 +32,7 @@ include('template/header.php');
           <select name="category">
             <option value="" disabled selected>Catégorie</option>
             <option value="roman">Roman</option>
-            <option value="bande dessinée">Bande Dessinée</option>
+            <option value="bande_dessinée">Bande Dessinée</option>
             <option value="nouvelle">Nouvelle</option>
             <option value="histoire">Histoire</option>
           </select>

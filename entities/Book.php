@@ -4,16 +4,16 @@ class Book
 {
   protected $id;
   protected $title;
-  protected $date;
   protected $author;
+  protected $year;
+  protected const CATEGORY = [
+    R => "Roman",
+    BD => "Bande Dessinée",
+    N => "Nouvelle",
+    H => "Histoire"
+  ];
   protected $resume;
 
-  const CATEGORY = [
-  R => "Roman",
-  BD => "Bande Dessinée",
-  N => "Nouvelle",
-  H => "Histoire"
-];
 
 
   // SETTERS
@@ -43,19 +43,6 @@ class Book
     $this->title = $title;
   }
 
-
-  /**
-  * Set the value of Date
-  *
-  * @param mixed date
-  *
-  * @return self
-  */
-  public function setDate($date)
-  {
-    $this->date = (int)$date;
-  }
-
   /**
   * Set the value of Author
   *
@@ -67,6 +54,31 @@ class Book
   {
     $this->author = $author;
   }
+
+  /**
+  * Set the value of Year
+  *
+  * @param mixed year
+  *
+  * @return self
+  */
+  public function setYear($year)
+  {
+    $this->year = (int)$year;
+  }
+
+  /**
+  * Set the value of Category
+  *
+  * @param mixed category
+  *
+  * @return self
+  */
+  public function setCategory($category)
+  {
+    $this->category = $category;
+  }
+
 
   /**
   * Set the value of Resume
@@ -105,16 +117,6 @@ class Book
   }
 
   /**
-  * Get the value of Date
-  *
-  * @return mixed
-  */
-  public function getDate()
-  {
-    return $this->date;
-  }
-
-  /**
   * Get the value of Author
   *
   * @return mixed
@@ -123,6 +125,27 @@ class Book
   {
     return $this->author;
   }
+
+  /**
+  * Get the value of Year
+  *
+  * @return mixed
+  */
+  public function getYear()
+  {
+    return $this->year;
+  }
+
+  /**
+  * Get the value of Category
+  *
+  * @return mixed
+  */
+  public function getCategory()
+  {
+    return $this->category;
+  }
+
 
   /**
   * Get the value of Resume

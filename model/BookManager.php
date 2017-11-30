@@ -18,11 +18,11 @@ class BookManager
     $req=$this->getBdd()->prepare('INSERT INTO books(id, title, author, year, category, resume)
     VALUES(:id, :title, :author, :year, :category, :resume)');
     $req->bindValue(':id', $b->getId());
-    $req->bindValue(':title', $b->getName(), PDO::PARAM_STR);
-    $req->bindValue(':author', $b->getAmount(), PDO::PARAM_INT);
-    $req->bindValue(':year', $b->getAmount(), PDO::PARAM_INT);
-    $req->bindValue(':category', $b->getAmount(), PDO::PARAM_INT);
-    $req->bindValue(':resume', $b->getAmount(), PDO::PARAM_INT);
+    $req->bindValue(':title', $b->getTitle(), PDO::PARAM_STR);
+    $req->bindValue(':author', $b->getAuthor(), PDO::PARAM_INT);
+    $req->bindValue(':year', $b->getYear(), PDO::PARAM_INT);
+    $req->bindValue(':category', $b->getCategory(), PDO::PARAM_INT);
+    $req->bindValue(':resume', $b->getResume(), PDO::PARAM_INT);
     $req->execute();
   }
 

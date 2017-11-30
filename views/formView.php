@@ -17,27 +17,35 @@ include('template/header.php');
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="year" name="year" type="number" class="validate">
-        <label for="year">Année</label>
-      </div>
-
-      <div class="input-field col s12 m10 l7">
         <input id="text2" name="author" type="text" class="validate">
         <label for="text2">Auteur</label>
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="text3" name="resume" type="text" class="validate">
-        <label for="text3">Résumer</label>
+        <input id="year" name="year" type="number" class="validate">
+        <label for="year">Année de parution</label>
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="text4" name="category" type="text" class="validate">
-        <label for="text4">Catégorie</label>
+          <select name="category">
+            <option value="" disabled selected>Catégorie</option>
+            <option value="roman">Roman</option>
+            <option value="bande dessinée">Bande Dessinée</option>
+            <option value="nouvelle">Nouvelle</option>
+            <option value="histoire">Histoire</option>
+          </select>
+        </div>
+
+
+      <div class="input-field col s12 m10 l7">
+        <textarea id="textarea1" name="resume" class="materialize-textarea"></textarea>
+          <label for="textarea1">Résumé</label>
       </div>
 
+
+
       <div class="input-field col s10">
-        <input class="waves-effect btn deep-orange lighten-2" value="Envoyer" type="submit" >
+        <input class="waves-effect btn deep-orange lighten-2" value="Envoyer" name="add" type="submit" >
       </div>
 
     </form>

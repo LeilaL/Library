@@ -8,6 +8,12 @@ include("template/header.php")
     <div class="row">
       <a href="index.php" id="return"><strong>Retour</strong></a>
       <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Ajouter un livre</a>
+      <select name="choix">
+    <option value="R">Roman</option>
+    <option value="BD">Bande Dessinée</option>
+    <option value="N">Nouvelle</option>
+    <option value="H">Histoire</option>
+</select>
       <!-- <?php foreach ($books as $infosBook) {
         ?> -->
         <div class="col s12 m4 l4">

@@ -16,7 +16,7 @@ class BookManager
   public function addBook (book $b)
   {
     $req=$this->getBdd()->prepare('INSERT INTO books(id, title, author, year, category, resume)
-    VALUES(:id, :name, :amount)');
+    VALUES(:id, :title, :author, :year, :category, :resume)');
     $req->bindValue(':id', $b->getId());
     $req->bindValue(':title', $b->getName(), PDO::PARAM_STR);
     $req->bindValue(':author', $b->getAmount(), PDO::PARAM_INT);

@@ -23,7 +23,11 @@
 <script src="../assets/js/materialize.js"></script>
 <script src="../assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function() {
+ $('select').material_select();
+});
+</script>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

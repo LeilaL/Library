@@ -1,8 +1,7 @@
 <?php
 require("../model/BookManager.php");
-require("../entities/Book.php");
+require("../entities/User.php");
 
-// controller of usersView
 
 // INSTANTIATION OF BookManager
 $bookManager = new BookManager();

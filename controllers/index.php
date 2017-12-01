@@ -17,7 +17,7 @@ if (!empty($_POST['add']) && isset($_POST['add'])) {
     'resume' => htmlspecialchars($_POST['resume'])]
   );
   $bookManager->addBook($book);
-  // TO AVOID FORM RESUBMISSION WHEN PAGE IS REFRESHED
+  // TO AVOID FORM RESUBMISSION WHEN PAGE IS REFRESHED :
   header('Location:index.php');
 }
   }
@@ -28,5 +28,9 @@ foreach ($books as $key => $value) {
   $books[$key] = new Book($value);
 }
 
+// STATE OF BOOK
+if (!empty($_POST['state']) && isset($_POST['state'])) {
+  
+}
 
 include '../views/indexView.php';

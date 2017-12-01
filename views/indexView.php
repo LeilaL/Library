@@ -31,12 +31,16 @@ include("template/header.php")
               <span class="card-title"><em> <?php echo $infosBook->getAuthor()?></em></span>
               <span class="card-title"><?php echo $infosBook->getYear()?></span>
             </div>
-            <form class="" action="index.html" method="post">
 
+            <!-- <div class="card-action" id="link"> -->
+            <form class="card-action" action="index.php" method="post">
+
+                <input class="waves-effect waves-teal btn-flat white-text " type="submit" name="state" value="Emprunter">
+              <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>">
+              <a class="white-text right" href="single.php?join=<?php echo $infosBook->getId()?>">Consulter</a><br>
             </form>
-            <div class="card-action" id="link">
-              <a href="single.php?join=<?php echo $infosBook->getId()?>">Consulter</a><br>
-           </div>
+
+           <!-- </div> -->
           </div>
         </div>
          <?php

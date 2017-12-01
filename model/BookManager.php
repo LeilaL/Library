@@ -52,4 +52,13 @@ class BookManager
       $req->bindValue('amount', $bk->getAmount(), PDO::PARAM_INT);
       $req->execute();
     }
+
+
+    // SELECT ALL FROM USERS TABLE
+    public function getAllUsers()
+    {
+      $response=$this->getBdd()->query("SELECT * FROM users");
+      $user=$response->fetchAll(PDO::FETCH_ASSOC);
+      return $user;
+    }
 }

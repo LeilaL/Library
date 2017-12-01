@@ -22,7 +22,7 @@ if (!empty($_POST['add']) && isset($_POST['add'])) {
 }
   }
 
-// FOREACH FOR SHOW INFOS
+// FOREACH FOR SHOW INFOS OF BOOKS
 $books= $bookManager->getAllBooks();
 foreach ($books as $key => $value) {
   $books[$key] = new Book($value);

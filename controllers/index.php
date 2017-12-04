@@ -28,9 +28,18 @@ foreach ($books as $key => $value) {
   $books[$key] = new Book($value);
 }
 
-// STATE OF BOOK
-if (!empty($_POST['state']) && isset($_POST['state'])) {
-  
+
+// SORT BY CATEGORY
+if(isset($_POST['sort']))
+{
+  $donnees = $bookManager->sortCategory($_POST['sort']);
 }
+
+// STATE OF BOOK
+// if (!empty($_POST['state']) && isset($_POST['state'])) {
+// $id
+// $state = $_POST['state']
+//$bookManager->updateState($state);
+// }
 
 include '../views/indexView.php';

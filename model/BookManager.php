@@ -15,14 +15,15 @@ class BookManager
   // INSERT BOOK IN BDD
   public function addBook(book $b)
   {
-    $req=$this->getBdd()->prepare('INSERT INTO books(id, title, author, year, category, resume)
-    VALUES(:id, :title, :author, :year, :category, :resume)');
+    $req=$this->getBdd()->prepare('INSERT INTO books(id, title, author, year, category, resume, state)
+    VALUES(:id, :title, :author, :year, :category, :resume, :state)');
     $req->bindValue(':id', $b->getId());
     $req->bindValue(':title', $b->getTitle(), PDO::PARAM_STR);
     $req->bindValue(':author', $b->getAuthor(), PDO::PARAM_STR);
     $req->bindValue(':year', $b->getYear(), PDO::PARAM_INT);
     $req->bindValue(':category', $b->getCategory(), PDO::PARAM_STR);
     $req->bindValue(':resume', $b->getResume(), PDO::PARAM_STR);
+    $req->bindValue(':state', $b->getState(), PDO::PARAM_STR);
     $req->execute();
   }
 
@@ -49,9 +50,23 @@ class BookManager
     {
       $req=$this->getBdd()->prepare("UPDATE books WHERE id = :id");
       $req->bindValue('id', $bk->getId(), PDO::PARAM_INT);
-      $req->bindValue('amount', $bk->getAmount(), PDO::PARAM_INT);
+      $req->bindValue('state', $bk->getState(), PDO::PARAM_STR);
       $req->execute();
     }
+
+// SORT BY CATEGORY
+    public function sortCategory($category)
+          {
+          $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
+            $req->bindValue(':category', $category);
+            $req->execute();
+            $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($donnees as $key => $value)
+            {
+              $donnees[$key] = new Book($value);
+            }
+            return $donnees;
+          }
 
 
     // SELECT ALL FROM USERS TABLE

@@ -9,13 +9,16 @@ include("template/header.php")
       <div class="container-fluid">
         <div class="row">
       <div class="input-field col s12 m10 l2">
-        <select name="choix">
+<form action="index.php" method="post">
+        <select name="sort">
           <option value="" disabled selected>Catégorie</option>
           <option value="roman">Roman</option>
           <option value="bande dessinée">Bande Dessinée</option>
           <option value="nouvelle">Nouvelle</option>
           <option value="histoire">Histoire</option>
         </select>
+        <!-- <input type="submit" name="search" value="search"> -->
+        </form>
       </div>
     </div>
   </div>
@@ -34,7 +37,6 @@ include("template/header.php")
 
             <!-- <div class="card-action" id="link"> -->
             <form class="card-action" action="index.php" method="post">
-
                 <input class="waves-effect waves-teal btn-flat white-text " type="submit" name="state" value="Emprunter">
               <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>">
               <a class="white-text right" href="single.php?join=<?php echo $infosBook->getId()?>">Consulter</a><br>

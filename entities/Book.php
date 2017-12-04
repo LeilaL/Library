@@ -13,7 +13,7 @@ class Book
     4 => "Histoire"
   ];
   protected $resume;
-
+protected $state;
 
 
   // SETTERS
@@ -92,6 +92,18 @@ class Book
     $this->resume = $resume;
   }
 
+  /**
+  * Set the value of State
+  *
+  * @param mixed state
+  *
+  * @return self
+  */
+  public function setState($state)
+  {
+    $this->state = $state;
+  }
+
   // GETTERS
 
   /**
@@ -155,6 +167,16 @@ class Book
   public function getResume()
   {
     return $this->resume;
+  }
+
+  /**
+  * Get the value of State
+  *
+  * @return mixed
+  */
+  public function getState()
+  {
+    return $this->state;
   }
 
   // METHODS

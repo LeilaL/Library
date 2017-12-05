@@ -21,7 +21,6 @@ include('template/header.php');
         <label for="text2">Auteur</label>
       </div>
 
-      <!-- <input type="hidden" name="state" value="disponible"> -->
 
       <div class="input-field col s12 m10 l7">
         <input id="year" name="year" type="number" class="validate">
@@ -44,6 +43,7 @@ include('template/header.php');
           <label for="textarea1">Résumé</label>
       </div>
 
+      <!-- <input type="hidden" name="state" value="1"> -->
 
 
       <div class="input-field col s10">

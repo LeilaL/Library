@@ -14,7 +14,8 @@ if (!empty($_POST['add']) && isset($_POST['add'])) {
     'author' => htmlspecialchars($_POST['author']),
     'year' => (int)htmlspecialchars($_POST['year']),
     'category' => htmlspecialchars($_POST['category']),
-    'resume' => htmlspecialchars($_POST['resume'])]
+    'resume' => htmlspecialchars($_POST['resume']),
+  'state' => htmlspecialchars($_POST['state'])]
   );
   $bookManager->addBook($book);
   // TO AVOID FORM RESUBMISSION WHEN PAGE IS REFRESHED :
@@ -30,10 +31,10 @@ foreach ($books as $key => $value) {
 
 
 // SORT BY CATEGORY
-if(isset($_POST['sort']))
-{
-  $donnees = $bookManager->sortCategory($_POST['sort']);
-}
+// if(isset($_POST['search']))
+// {
+//   $books = $bookManager->sortCategory($_POST['category']);
+// }
 
 // STATE OF BOOK
 // if (!empty($_POST['state']) && isset($_POST['state'])) {

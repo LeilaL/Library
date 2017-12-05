@@ -55,18 +55,18 @@ class BookManager
     }
 
 // SORT BY CATEGORY
-    public function sortCategory($category)
-          {
-          $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
-            $req->bindValue(':category', $category);
-            $req->execute();
-            $donnees = $req->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($donnees as $key => $value)
-            {
-              $donnees[$key] = new Book($value);
-            }
-            return $donnees;
-          }
+    // public function sortCategory($category)
+    //       {
+    //       $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
+    //         $req->bindValue(':category', $category);
+    //         $req->execute();
+    //         $books = $req->fetchAll(PDO::FETCH_ASSOC);
+    //       foreach ($books as $key => $value)
+    //         {
+    //           $books[$key] = new Book($value);
+    //         }
+    //         return $books;
+    //       }
 
 
     // SELECT ALL FROM USERS TABLE

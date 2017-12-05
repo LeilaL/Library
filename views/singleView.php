@@ -7,7 +7,7 @@ include("template/header.php");
 <a href="index.php" id="return"><strong>Retour</strong></a>
 <div class="row">
   <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Ajouter un livre</a>
-  <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Voir les utilisateurs</a><br>
+  <a id="button" class="waves-effect btn deep-orange lighten-2" href="users.php">Voir les utilisateurs</a><br>
   <br>
   <div class="col s12 m7 offset-m3 l6 offset-l3">
     <div class="card deep-orange">

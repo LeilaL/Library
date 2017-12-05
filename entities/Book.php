@@ -6,12 +6,7 @@ class Book
   protected $title;
   protected $author;
   protected $year;
-  const CATEGORY = [
-    1 => "Roman",
-    2 => "Bande Dessinée",
-    3 => "Nouvelle",
-    4 => "Histoire"
-  ];
+  const CATEGORY = ["Roman", "Bande Dessinée", "Nouvelle", "Histoire"];
   protected $resume;
 protected $state;
 

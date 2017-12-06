@@ -13,22 +13,21 @@ if (!empty($_GET['join'])) {
   $book = new Book($singleBook);
 }
 
-// STATE OF BOOK
-// if (!empty($_POST['state']) && isset($_POST['state'])) {
-// $id
-// $state = $_POST['state']
-// $bookManager->updateState($state);
-// }
+// STATE OF BOOK + LINK A USER TO A BOOK
+// if (isset($_POST['id'])){
+// $update = $bookManager->getBook($_POST['id']);
+// $update->getState();
+//
+// $user_id = $_POST['user_id'];
+// $user = $update->getUser($user_id);
+// $update->setUser_id($user);
+//
+// $update->setState($_POST['state']);
+//
+// $bookManager->updateState($update);
+// header('Location:single.php');
+//  }
 
-if (isset($_POST['id'])){
-$update = $bookManager->getBook($_POST['id']);
-$update->getState();
-
-$user_id = $_POST['user_id'];
-$update->setUser_id($user_id);
-
-$update->setState($_POST['state']);
-  $bookManager->updateState($update);
-}
 
 include '../views/singleView.php';
+?>

@@ -8,8 +8,8 @@ class Book
   protected $year;
   const CATEGORY = ["Roman", "Bande Dessinée", "Nouvelle", "Histoire"];
   protected $resume;
-protected $state;
-protected $user_id;
+  protected $state;
+  protected $user_id;
 
 
   // SETTERS
@@ -215,3 +215,4 @@ protected $user_id;
     $this->hydrate($data);
   }
 }
+?>

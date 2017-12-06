@@ -10,7 +10,7 @@ include('template/header.php');
   <div class="row">
 
     <form class="col s12" action="index.php" method="post">
-<p><em>Les champs indiqués par une * sont obligatoires</em></p>
+      <p><em>Les champs indiqués par une * sont obligatoires</em></p>
 
       <div class="input-field col s12 m10 l7">
         <input id="text1" name="title" type="text" class="validate" required>
@@ -29,22 +29,20 @@ include('template/header.php');
       </div>
 
       <div class="input-field col s12 m10 l7">
-          <select name="category" required>
-            <option value="" disabled selected>Catégorie*</option>
-            <option value="roman">Roman</option>
-            <option value="bande dessinée">Bande Dessinée</option>
-            <option value="nouvelle">Nouvelle</option>
-            <option value="histoire">Histoire</option>
-          </select>
-        </div>
+        <select name="category" required>
+          <option value="" disabled selected>Catégorie*</option>
+          <option value="roman">Roman</option>
+          <option value="bande dessinée">Bande Dessinée</option>
+          <option value="nouvelle">Nouvelle</option>
+          <option value="histoire">Histoire</option>
+        </select>
+      </div>
 
 
       <div class="input-field col s12 m10 l7">
         <textarea id="textarea1" name="resume" class="materialize-textarea" required></textarea>
-          <label for="textarea1">Résumé*</label>
+        <label for="textarea1">Résumé*</label>
       </div>
-
-      <!-- <input type="hidden" name="state" value="1"> -->
 
 
       <div class="input-field col s10">

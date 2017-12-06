@@ -17,29 +17,36 @@ include("template/header.php");
         <span class="card-title"><?php echo $book->getYear()?></span>
         <p><?php echo $book->getCategory()?></p><br>
         <br>
-        <span ><?php if ($book->getState() == 1) {echo 'Disponible';}else {echo 'Emprunté';  }?></span><br>
+        <span ><?php if ($book->getState() == 1) {
+          echo 'Disponible';
+        } else {
+          echo 'Prêté';
+        }?></span><br>
         <br>
-<p><?php echo $book->getResume()?></p>
+        <p><?php echo $book->getResume()?></p>
       </div>
 
-      <div class="card-action " id="link">
-        <ul class="mz-collapsible" data-collapsible="accordion">
-        <li>
-      <div class="mz-collapsible-item-header white-text deep-orange lighten-2">
-        <i class="white-text material-icons">info</i> Pour l'emprunter veuillez saisir l'identifiant de l'utilisateur
-      </div>
-      <div class="mz-collapsible-item-body">
-        <form class="card-action" action="index.php" method="post">
-      </div>
-        <input name="user_id" type="number" class="validate" required>
-        <input class="waves-effect waves-teal btn deep-orange lighten-2 white-text " type="submit" name="submit" value="Emprunter">
-      <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>">
-      </form>
-    </li>
-  </ul>
-</div>
-    </div>
+      <!-- <div class="card-action <?php if ($book->getState() == 0) {
+      echo "hide";
+    } ?>" id="link">
+    <ul class="mz-collapsible" data-collapsible="accordion">
+    <li>
+    <div class="mz-collapsible-item-header white-text deep-orange lighten-2">
+    <i class="white-text material-icons">info</i> Pour l'emprunter veuillez saisir l'identifiant de l'utilisateur
   </div>
+  <div class="mz-collapsible-item-body">
+  <form class="card-action" action="index.php" method="post">
+</div>
+<input name="user_id" type="number" class="validate" required>
+<input class="waves-effect waves-teal btn deep-orange lighten-2 white-text" type="submit" name="submit" value="Emprunter">
+<input type="hidden" name="id" value="<?php echo $book->getId()?>">
+<input type="hidden" name="state" value="0">
+</form>
+</li>
+</ul>
+</div> -->
+</div>
+</div>
 </div>
 <!-- ======================================================== -->
 

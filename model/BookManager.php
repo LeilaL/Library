@@ -48,45 +48,53 @@ class BookManager
   }
 
   // UPDATE BOOK STATE
-    public function updateState($book)
-    {
-      $req=$this->getBdd()->prepare("UPDATE books SET state = :state WHERE id = :id");
-      $req->bindValue('id', $book->getId(), PDO::PARAM_INT);
-      $req->bindValue('state', $book->getState(), PDO::PARAM_STR);
-      $req->execute();
+  public function updateState($book)
+  {
+    $req=$this->getBdd()->prepare("UPDATE books SET state = :state WHERE id = :id");
+    $req->bindValue('id', $book->getId(), PDO::PARAM_INT);
+    $req->bindValue('state', $book->getState(), PDO::PARAM_STR);
+    $req->execute();
+  }
+
+  // SORT BY CATEGORY
+  public function sortCategory($category)
+  {
+    $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
+    $req->bindValue(':category', $category);
+    $req->execute();
+    $books = $req->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($books as $key => $value) {
+      $books[$key] = new Book($value);
     }
-
-// SORT BY CATEGORY
-    public function sortCategory($category)
-          {
-          $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
-            $req->bindValue(':category', $category);
-            $req->execute();
-            $books = $req->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($books as $key => $value)
-            {
-              $books[$key] = new Book($value);
-            }
-            return $books;
-          }
+    return $books;
+  }
 
 
-    // SELECT ALL FROM USERS TABLE
-    public function getAllUsers()
-    {
-      $response=$this->getBdd()->query("SELECT * FROM users");
-      $user=$response->fetchAll(PDO::FETCH_ASSOC);
-      return $user;
-    }
+  // SELECT ALL FROM USERS TABLE
+  public function getAllUsers()
+  {
+    $response=$this->getBdd()->query("SELECT * FROM users");
+    $user=$response->fetchAll(PDO::FETCH_ASSOC);
+    return $user;
+  }
 
-    // SELECT A USER
-    public function getUser($user_id)
-    {
-      $response=$this->getBdd()->prepare("SELECT * FROM users WHERE user_id=:user_id");
-      $response->bindValue('user_id', $user_id, PDO::PARAM_INT);
-      $response->execute();
-      $user =$response->fetch(PDO::FETCH_ASSOC);
-      return $user;
-    }
+  // SELECT A USER
+  public function getUser($user_id)
+  {
+    $response=$this->getBdd()->prepare("SELECT * FROM users WHERE user_id=:user_id");
+    $response->bindValue('user_id', $user_id, PDO::PARAM_INT);
+    $response->execute();
+    $user =$response->fetch(PDO::FETCH_ASSOC);
+    return $user;
+  }
 
+  // JOINS BETWEEN TABLES
+  //     public function joinUser($user_id){
+  //     $response = $this->getBdd()->prepare('SELECT * FROM books INNER JOIN users ON users.id = books.user_id');
+  //     $response->execute(array($user_id));
+  //     $user=$response->fetch(PDO::FETCH_ASSOC);
+  //     $user = new Book($user);
+  //     return $user;
+  // }
 }
+?>

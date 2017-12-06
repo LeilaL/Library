@@ -1,4 +1,4 @@
-<?php
+  <?php
 require("../model/BookManager.php");
 require("../entities/Book.php");
 
@@ -9,6 +9,7 @@ $bookManager = new BookManager();
 // INSERT INPUT VALUES IN BDD
 if (!empty($_POST['add']) && isset($_POST['add'])) {
   if (!empty($_POST)) {
+    // ajouter tout les post dans la condition
   $book = new Book(
     ['title' => htmlspecialchars($_POST['title']),
     'author' => htmlspecialchars($_POST['author']),
@@ -31,16 +32,16 @@ foreach ($books as $key => $value) {
 
 
 // SORT BY CATEGORY
-// if(isset($_POST['search']))
-// {
-//   $books = $bookManager->sortCategory($_POST['category']);
-// }
+if(isset($_POST['search']))
+{
+  $books = $bookManager->sortCategory($_POST['category']);
+}
 
 // STATE OF BOOK
-// if (!empty($_POST['state']) && isset($_POST['state'])) {
-// $id
-// $state = $_POST['state']
-//$bookManager->updateState($state);
-// }
+if (!empty($_POST['state']) && isset($_POST['state'])) {
+$id
+$state = $_POST['state']
+$bookManager->updateState($state);
+}
 
 include '../views/indexView.php';

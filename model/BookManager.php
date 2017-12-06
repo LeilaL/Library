@@ -15,16 +15,18 @@ class BookManager
   // INSERT BOOK IN BDD
   public function addBook(book $b)
   {
-    $req=$this->getBdd()->prepare('INSERT INTO books(id, title, author, year, category, resume, state)
-    VALUES(:id, :title, :author, :year, :category, :resume, :state)');
-    $req->bindValue(':id', $b->getId());
+    // var_dump($b);
+    $req=$this->getBdd()->prepare('INSERT INTO books(title, author, year, category, resume)
+    VALUES(:title, :author, :year, :category, :resume)');
+    // $req->bindValue(':id', $b->getId());
     $req->bindValue(':title', $b->getTitle(), PDO::PARAM_STR);
     $req->bindValue(':author', $b->getAuthor(), PDO::PARAM_STR);
-    $req->bindValue(':year', $b->getYear(), PDO::PARAM_INT);
+    $req->bindValue(':year', (int)$b->getYear());
     $req->bindValue(':category', $b->getCategory(), PDO::PARAM_STR);
     $req->bindValue(':resume', $b->getResume(), PDO::PARAM_STR);
-    $req->bindValue(':state', $b->getState(), PDO::PARAM_STR);
+    // $req->bindValue(':state', (int)$b->getState());
     $req->execute();
+    // var_dump($req);
   }
 
   // SELECT ALL FROM BOOK TABLE
@@ -55,18 +57,18 @@ class BookManager
     }
 
 // SORT BY CATEGORY
-    // public function sortCategory($category)
-    //       {
-    //       $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
-    //         $req->bindValue(':category', $category);
-    //         $req->execute();
-    //         $books = $req->fetchAll(PDO::FETCH_ASSOC);
-    //       foreach ($books as $key => $value)
-    //         {
-    //           $books[$key] = new Book($value);
-    //         }
-    //         return $books;
-    //       }
+    public function sortCategory($category)
+          {
+          $req=$this->getBdd()->prepare('SELECT * FROM books WHERE category = :category');
+            $req->bindValue(':category', $category);
+            $req->execute();
+            $books = $req->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($books as $key => $value)
+            {
+              $books[$key] = new Book($value);
+            }
+            return $books;
+          }
 
 
     // SELECT ALL FROM USERS TABLE

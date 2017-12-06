@@ -4,10 +4,10 @@ include("template/header.php")
 <main id="main">
 
   <!-- ================ BOOK CARD ==================== -->
-      <a href="index.php" id="return"><strong>Retour</strong></a>
-      <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Ajouter un livre</a>
-      <div class="container-fluid">
-        <div class="row">
+  <a href="index.php" id="return"><strong>Retour</strong></a>
+  <a id="button" class="waves-effect btn deep-orange lighten-2" href="form.php">Ajouter un livre</a>
+  <div class="container-fluid">
+    <div class="row">
 
       <?php foreach ($users as $user) {
         ?>

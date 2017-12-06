@@ -125,3 +125,4 @@ class User
     $this->hydrate($data);
   }
 }
+?>

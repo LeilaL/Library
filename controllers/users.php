@@ -14,4 +14,4 @@ foreach ($users as $key => $value) {
 
 
 include '../views/usersView.php';
- ?>
+?>

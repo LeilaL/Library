@@ -8,7 +8,8 @@ class Book
   protected $year;
   const CATEGORY = ["Roman", "Bande Dessinée", "Nouvelle", "Histoire"];
   protected $resume;
-protected $state;
+  protected $state;
+  protected $user_id;
 
 
   // SETTERS
@@ -99,6 +100,18 @@ protected $state;
     $this->state = $state;
   }
 
+  /**
+  * Set the value of User_id
+  *
+  * @param mixed user_id
+  *
+  * @return self
+  */
+  public function setUser_id($user_id)
+  {
+    $this->user_id = $user_id;
+  }
+
   // GETTERS
 
   /**
@@ -174,6 +187,16 @@ protected $state;
     return $this->state;
   }
 
+  /**
+  * Get the value of User_id
+  *
+  * @return mixed
+  */
+  public function getUser_id()
+  {
+    return $this->user_id;
+  }
+
   // METHODS
 
 
@@ -192,3 +215,4 @@ protected $state;
     $this->hydrate($data);
   }
 }
+?>

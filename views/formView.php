@@ -43,7 +43,7 @@ include('template/header.php');
           <label for="textarea1">Résumé</label>
       </div>
 
-      <!-- <input type="hidden" name="state" value="1"> -->
+      <input type="hidden" name="state" value="1">
 
 
       <div class="input-field col s10">

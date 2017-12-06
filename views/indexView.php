@@ -9,7 +9,7 @@ include("template/header.php")
       <div class="container-fluid">
         <div class="row">
       <div class="input-field col s12 m5 l2">
-<!-- <form action="index.php" method="post">
+<form action="index.php" method="post">
         <select name="category">
           <option value="" disabled selected>Catégorie</option>
           <option value="roman">Roman</option>
@@ -18,7 +18,7 @@ include("template/header.php")
           <option value="histoire">Histoire</option>
         </select>
         <input class="waves-effect btn waves-light deep-orange lighten-2"type="submit" name="search" value="Rechercher">
-        </form> -->
+        </form>
       </div>
     </div>
   </div>

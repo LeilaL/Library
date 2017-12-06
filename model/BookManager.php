@@ -78,4 +78,15 @@ class BookManager
       $user=$response->fetchAll(PDO::FETCH_ASSOC);
       return $user;
     }
+
+    // SELECT A USER
+    public function getUser($user_id)
+    {
+      $response=$this->getBdd()->prepare("SELECT * FROM users WHERE user_id=:user_id");
+      $response->bindValue('user_id', $user_id, PDO::PARAM_INT);
+      $response->execute();
+      $user =$response->fetch(PDO::FETCH_ASSOC);
+      return $user;
+    }
+
 }

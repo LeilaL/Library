@@ -28,6 +28,26 @@ $(document).ready(function() {
  $('select').material_select();
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});
+</script>
+<!-- <script type="text/javascript">
+$('.collapsible').collapsible({
+ accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+ onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
+ onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
+});
+</script> -->
+<script type="text/javascript">
+// Open
+$('.collapsible').collapsible('open', 0);
+// Close
+$('.collapsible').collapsible('close', 0);
+// Destroy
+$('.collapsible').collapsible('destroy');
+</script>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

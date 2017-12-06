@@ -43,14 +43,12 @@ if(isset($_POST['search']))
 // $bookManager->updateState($state);
 // }
 
-if (isset($_POST['submit'])){
-  // retrieve the object from the ID
-$update = $bookManager->getAllBooks($_POST['id']);
+// if (isset($_POST['submit'])){
+// $update = $bookManager->getBook($_POST['id']);
 // if(isset($_POST['state'])){
-//     $update-> updateState($_POST['state']);
+//     $update-> setState($_POST['state']);
 // }
-  // update object
-  $bookManager->updateState($update);
-}
+//   $bookManager->updateState($update);
+// }
 
 include '../views/indexView.php';

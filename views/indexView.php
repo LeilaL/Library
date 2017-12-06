@@ -34,10 +34,11 @@ include("template/header.php")
               <span class="card-title"><em> <?php echo $infosBook->getAuthor()?></em></span>
               <span class="card-title"><?php echo $infosBook->getYear()?></span>
               <span class="card-title"><?php echo $infosBook->getCategory()?></span>
+              <span ><?php if ($infosBook->getState() == 1) {echo 'Disponible';}else {echo 'Emprunté';  }?></span>
             </div>
 
-            <!-- <div class="card-action" id="link"> -->
-            <form class="card-action" action="index.php" method="post">
+            <div class="card-action" id="link">
+            <!-- <form class="card-action" action="index.php" method="post">
    <p class="left white-text">
      Souhaitez-vous l'emprunter?
      <input class="with-gap" name="state" value="oui" type="radio" id="test1" />
@@ -48,11 +49,11 @@ include("template/header.php")
      <label class="white-text" for="test2">non</label>
    </p>
                 <input class="waves-effect waves-teal btn-flat white-text " type="submit" name="submit" value="Emprunter">
-              <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>">
+              <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>"> -->
               <a class="white-text right" href="single.php?join=<?php echo $infosBook->getId()?>">Consulter</a><br>
-            </form>
+            <!-- </form> -->
 
-           <!-- </div> -->
+           </div>
           </div>
         </div>
          <?php

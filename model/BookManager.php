@@ -48,11 +48,11 @@ class BookManager
   }
 
   // UPDATE BOOK STATE
-    public function updateState(Book $bk)
+    public function updateState($book)
     {
-      $req=$this->getBdd()->prepare("UPDATE books WHERE id = :id");
-      $req->bindValue('id', $bk->getId(), PDO::PARAM_INT);
-      $req->bindValue('state', $bk->getState(), PDO::PARAM_STR);
+      $req=$this->getBdd()->prepare("UPDATE books SET state = :state WHERE id = :id");
+      $req->bindValue('id', $book->getId(), PDO::PARAM_INT);
+      $req->bindValue('state', $book->getState(), PDO::PARAM_STR);
       $req->execute();
     }
 

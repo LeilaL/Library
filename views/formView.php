@@ -10,28 +10,29 @@ include('template/header.php');
   <div class="row">
 
     <form class="col s12" action="index.php" method="post">
+<p><em>Les champs indiqués par une * sont obligatoires</em></p>
 
       <div class="input-field col s12 m10 l7">
-        <input id="text1" name="title" type="text" class="validate">
-        <label for="text1">Titre</label>
+        <input id="text1" name="title" type="text" class="validate" required>
+        <label for="text1">Titre*</label>
       </div>
 
       <div class="input-field col s12 m10 l7">
-        <input id="text2" name="author" type="text" class="validate">
-        <label for="text2">Auteur</label>
+        <input id="text2" name="author" type="text" class="validate" required>
+        <label for="text2">Auteur*</label>
       </div>
 
 
       <div class="input-field col s12 m10 l7">
-        <input id="year" name="year" type="number" class="validate">
-        <label for="year">Année de parution</label>
+        <input id="year" name="year" type="number" class="validate" required>
+        <label for="year">Année de parution*</label>
       </div>
 
       <div class="input-field col s12 m10 l7">
-          <select name="category">
-            <option value="" disabled selected>Catégorie</option>
+          <select name="category" required>
+            <option value="" disabled selected>Catégorie*</option>
             <option value="roman">Roman</option>
-            <option value="bande_dessinée">Bande Dessinée</option>
+            <option value="bande dessinée">Bande Dessinée</option>
             <option value="nouvelle">Nouvelle</option>
             <option value="histoire">Histoire</option>
           </select>
@@ -39,11 +40,11 @@ include('template/header.php');
 
 
       <div class="input-field col s12 m10 l7">
-        <textarea id="textarea1" name="resume" class="materialize-textarea"></textarea>
-          <label for="textarea1">Résumé</label>
+        <textarea id="textarea1" name="resume" class="materialize-textarea" required></textarea>
+          <label for="textarea1">Résumé*</label>
       </div>
 
-      <input type="hidden" name="state" value="1">
+      <!-- <input type="hidden" name="state" value="1"> -->
 
 
       <div class="input-field col s10">

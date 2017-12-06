@@ -38,7 +38,16 @@ include("template/header.php")
 
             <!-- <div class="card-action" id="link"> -->
             <form class="card-action" action="index.php" method="post">
-                <input class="waves-effect waves-teal btn-flat white-text " type="submit" name="state" value="Emprunter">
+   <p class="left white-text">
+     Souhaitez-vous l'emprunter?
+     <input class="with-gap" name="state" value="oui" type="radio" id="test1" />
+     <label class="white-text" for="test1">oui</label>
+   </p>
+   <p>
+     <input class="with-gap" name="state" value="non" type="radio" id="test2" />
+     <label class="white-text" for="test2">non</label>
+   </p>
+                <input class="waves-effect waves-teal btn-flat white-text " type="submit" name="submit" value="Emprunter">
               <input type="hidden" name="id" value="<?php echo $infosBook->getId()?>">
               <a class="white-text right" href="single.php?join=<?php echo $infosBook->getId()?>">Consulter</a><br>
             </form>

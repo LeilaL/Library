@@ -7,5 +7,5 @@ Application which allow to :
 * show them
 * sort them by category
 * show all users
-* show card details
+* show books details
 
